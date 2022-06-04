@@ -1,27 +1,33 @@
-const heroElementId = "hero"
-const heroName = "Wizard"
-const heroAvatar = "images/wizard.jpg"
-const heroHealth = 60
-const heroDiceScore = 6
-
-const monsterElementId = "monster"
-const monsterName = "Orc"
-const monsterAvatar = "images/orc.jpg"
-const monsterHealth = 10
-const monsterDiceScore = 4
-
-renderCharactar(heroElementId, heroName, heroAvatar, heroHealth, heroDiceScore)
-renderCharactar(monsterElementId, monsterName, monsterAvatar, monsterHealth, monsterDiceScore)
 
 
-function renderCharactar(elementId, name, avatar, health, diceScore) {
-  document.getElementById(elementId).innerHTML = `
+const hero = {
+  elementId: "hero",
+  name: "Wizard",
+  avatar: "images/wizard.jpg",
+  health: 60,
+  diceScore: 6
+}
+
+const monster = {
+  elementId: "monster",
+  name: "Orc",
+  avatar: "images/orc.jpg",
+  health: 10,
+  diceScore: 4
+}
+
+renderCharactar(hero)
+renderCharactar(monster)
+
+
+function renderCharactar(character) {
+  document.getElementById(character.elementId).innerHTML = `
   <div class="character-card">
-    <h4 class="name"> ${name} </h4>
-    <img class="avatar" src="${avatar}"/>
-    <p class="health">health: <b> ${health} </b></p>
+    <h4 class="name"> ${character.name} </h4>
+    <img class="avatar" src="${character.avatar}"/>
+    <p class="health">health: <b> ${character.health} </b></p>
     <div class="dice-container">
-      <div class="dice"> ${diceScore} </div>
+      <div class="dice"> ${character.diceScore} </div>
     </div>
   </div>
   `
