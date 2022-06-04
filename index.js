@@ -20,14 +20,14 @@ renderCharactar(hero)
 renderCharactar(monster)
 
 
-function renderCharactar(character) {
-  document.getElementById(character.elementId).innerHTML = `
+function renderCharactar({ elementId, name, avatar, health, diceScore }) {
+  document.getElementById(elementId).innerHTML = `
   <div class="character-card">
-    <h4 class="name"> ${character.name} </h4>
-    <img class="avatar" src="${character.avatar}"/>
-    <p class="health">health: <b> ${character.health} </b></p>
+    <h4 class="name"> ${name} </h4>
+    <img class="avatar" src="${avatar}"/>
+    <p class="health">health: <b> ${health} </b></p>
     <div class="dice-container">
-      <div class="dice"> ${character.diceScore} </div>
+      <div class="dice"> ${diceScore} </div>
     </div>
   </div>
   `
