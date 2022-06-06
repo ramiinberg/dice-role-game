@@ -15,6 +15,14 @@ const monster = {
   diceCount: 1
 }
 
+function Character(data) {
+  this.elementId = data.elementId
+  this.name = data.name
+  this.avatar = data.avatar
+  this.health = data.health
+  this.diceCount = data.diceCount
+}
+
 function renderCharactar({ elementId, name, avatar, health, diceCount }) {
   document.getElementById(elementId).innerHTML = `
   <div class="character-card">
