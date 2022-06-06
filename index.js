@@ -1,18 +1,19 @@
 
-const hero = {
-  elementId: "hero",
-  name: "Wizard",
-  avatar: "images/wizard.jpg",
-  health: 60,
-  diceCount: 3
-}
-
-const monster = {
-  elementId: "monster",
-  name: "Orc",
-  avatar: "images/orc.jpg",
-  health: 10,
-  diceCount: 1
+const characterData = {
+  hero: {
+    elementId: "hero",
+    name: "Wizard",
+    avatar: "images/wizard.jpg",
+    health: 60,
+    diceCount: 3
+  },
+  monster: {
+    elementId: "monster",
+    name: "Orc",
+    avatar: "images/orc.jpg",
+    health: 10,
+    diceCount: 1
+  }
 }
 
 function Character(data) {
@@ -38,10 +39,10 @@ function Character(data) {
 }
 
 function render() {
-  const wizard = new Character(hero)
+  const wizard = new Character(characterData.hero)
   document.getElementById(wizard.elementId).innerHTML = wizard.getCharacterHtml()
 
-  const orc = new Character(monster)
+  const orc = new Character(characterData.monster)
   document.getElementById(orc.elementId).innerHTML = orc.getCharacterHtml()
 }
 
