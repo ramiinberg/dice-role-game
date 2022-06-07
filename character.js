@@ -24,6 +24,10 @@ function Character(data) {
   }
 
   this.diceArray = getDicePlaceholderHtml(this.diceCount)
+
+  this.takeDamage = function() {
+    console.log(`${this.name} is damaged`)
+  }
 }
 
 export default Character
