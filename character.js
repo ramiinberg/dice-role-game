@@ -4,8 +4,9 @@ function Character(data) {
   Object.assign(this, data)
 
   this.getDiceHtml = function() {
-    return getDiceRollArray(this.diceCount).map(function(dice){
-      return `<div class="dice">${dice}</div>`
+    this.currentDiceScore = getDiceRollArray(this.diceCount)
+    this.diceArray = this.currentDiceScore.map(function(num){
+      return `<div class="dice">${num}</div>`
     }).join('')
   }
   
