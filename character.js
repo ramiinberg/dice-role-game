@@ -10,12 +10,13 @@ function Character(data) {
   }
   
   this.getCharacterHtml = function() {
+    const { name, avatar, health, diceArray } = this
     return `<div class="character-card">
-              <h4 class="name"> ${this.name} </h4>
-              <img class="avatar" src="${this.avatar}"/>
-              <p class="health">health: <b> ${this.health} </b></p>
+              <h4 class="name"> ${name} </h4>
+              <img class="avatar" src="${avatar}"/>
+              <p class="health">health: <b> ${health} </b></p>
               <div class="dice-container">
-                ${this.diceArray}
+                ${diceArray}
               </div>
             </div>
     `
