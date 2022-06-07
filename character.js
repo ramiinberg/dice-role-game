@@ -1,4 +1,4 @@
-import { getDiceRollArray } from "./utils.js"
+import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js"
 
 function Character(data) {
   Object.assign(this, data)
@@ -15,11 +15,13 @@ function Character(data) {
               <img class="avatar" src="${this.avatar}"/>
               <p class="health">health: <b> ${this.health} </b></p>
               <div class="dice-container">
-                ${this.getDiceHtml(this.diceCount)}
+                ${this.diceArray}
               </div>
             </div>
     `
   }
+
+  this.diceArray = getDicePlaceholderHtml(this.diceCount)
 }
 
 export default Character
