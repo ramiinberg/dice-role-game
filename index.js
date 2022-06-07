@@ -1,5 +1,5 @@
-import characterData from "./data"
-import { getDiceRollArray } from "./utils"
+import characterData from "./data.js"
+import { getDiceRollArray } from "./utils.js"
 
 function Character(data) {
   Object.assign(this, data)
