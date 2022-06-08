@@ -22,15 +22,20 @@ function attack() {
   wizard.takeDamage(orc.currentDiceScore)
   orc.takeDamage(wizard.currentDiceScore)
   if(orc.dead || wizard.dead) {
-    endGame(wizard, orc)
+    endGame()
   }
 
   render()
 }
 
-function endGame(wizard, orc) {
-  const endMessage = wizard.dead ? "The Orc is Victorious" : orc.dead ? `The 
-  Wizard Wins` : `No victors - all creatures are dead`
+function endGame() {
+  const endMessage = wizard.dead ? "The Orc is Victorious" : orc.dead ? `The Wizard Wins` : `No victors - all creatures are dead`
+  const endEmoji = !wizard.dead ? "🔮" : "☠️"
 
-  console.log(endMessage)
+  document.body.innerHTML = `<div class="end-game">
+        <h2>Game Over</h2>
+        <h3>${endMessage}</h3>
+        <p class="end-emoji">${endEmoji}</p>
+    </div>` 
+
 }
