@@ -22,12 +22,15 @@ function attack() {
   wizard.takeDamage(orc.currentDiceScore)
   orc.takeDamage(wizard.currentDiceScore)
   if(orc.dead || wizard.dead) {
-    endGame()
+    endGame(wizard, orc)
   }
 
   render()
 }
 
-function endGame() {
-  console.log("the game is over")
+function endGame(wizard, orc) {
+  const endMessage = wizard.dead ? "The Orc is Victorious" : orc.dead ? `The 
+  Wizard Wins` : `No victors - all creatures are dead`
+
+  console.log(endMessage)
 }
