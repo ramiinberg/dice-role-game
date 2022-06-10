@@ -13,6 +13,9 @@ function Character(data) {
   
   this.getCharacterHtml = function() {
     const { name, avatar, health, diceArray } = this
+
+    const healthBar = this.getHealthBarHtml()
+
     return `<div class="character-card">
               <h4 class="name"> ${name} </h4>
               <img class="avatar" src="${avatar}"/>
@@ -33,6 +36,11 @@ function Character(data) {
       this.dead = true
       this.health = 0
     }
+  }
+
+  this.getHealthBarHtml = () => {
+    const percent = getPercentage(this.health, this.maxHealth)
+    console.log(percent)
   }
 }
 
