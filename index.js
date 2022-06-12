@@ -3,15 +3,14 @@ import Character from "./character.js"
 
 document.getElementById("attack-button").addEventListener("click", attack)
 
-const wizard = new Character(characterData.hero)
 
 let monsterArray = ["orc", "demon", "goblin"]
-const orc = new Character(characterData.monster)
 
 render()
 
 const getNewMonster = () => {
-  const nextMonsterData =characterData[monsterArray.shift()]
+  const nextMonsterData = characterData[monsterArray.shift()]
+  return nextMonsterData ? new Character(nextMonsterData) : {}
 }
 
 function render() {
@@ -43,3 +42,6 @@ function endGame() {
     </div>` 
 
 }
+
+const wizard = new Character(characterData.hero)
+let monster = getNewMonster()
