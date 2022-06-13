@@ -5,7 +5,6 @@ let monsterArray = ["orc", "demon", "goblin"]
 
 const getNewMonster = () => {
   const nextMonsterData = characterData[monsterArray.shift()]
-  console.log('next', nextMonsterData)
   return nextMonsterData ? new Character(nextMonsterData) : {}
 }
 
@@ -18,7 +17,10 @@ function attack() {
 
   if(monster.dead) {
     if(monsterArray.length) {
-      monster = getNewMonster()
+      setTimeout(function () {
+        monster = getNewMonster()
+        render()
+      }, 1000)
     }
     else {
       endGame()
@@ -35,11 +37,14 @@ function endGame() {
   const endMessage = wizard.dead ? "The Monsters is Victorious" : monster.dead ? `The Wizard Wins` : `No victors - all creatures are dead`
   const endEmoji = !wizard.dead ? "🔮" : "☠️"
 
-  document.body.innerHTML = `<div class="end-game">
-        <h2>Game Over</h2>
-        <h3>${endMessage}</h3>
-        <p class="end-emoji">${endEmoji}</p>
-    </div>` 
+  setTimeout(() => {
+    document.body.innerHTML = `<div class="end-game">
+          <h2>Game Over</h2>
+          <h3>${endMessage}</h3>
+          <p class="end-emoji">${endEmoji}</p>
+      </div>` 
+  }, 1500)
+
 
 }
 
