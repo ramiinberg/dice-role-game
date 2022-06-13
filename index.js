@@ -40,7 +40,7 @@ function attack() {
 function endGame() {
   const endMessage = wizard.dead && monster.dead
    ?  `No victors - all creatures are dead`
-   : wizard.dead ? "The Monsters is Victorious" : `The Wizard Wins`
+   : wizard.dead ? "The Monsters are Victorious" : `The Wizard Wins`
   const endEmoji = !wizard.dead ? "🔮" : "☠️"
 
   document.getElementById("attack-button").setAttribute("disabled", "disabled")
