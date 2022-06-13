@@ -17,10 +17,14 @@ function attack() {
 
   if(monster.dead) {
     if(monsterArray.length) {
+      document.getElementById("attack-button").setAttribute("disabled", "disabled")
       setTimeout(function () {
         monster = getNewMonster()
         render()
-      }, 1000)
+        document.getElementById("attack-button").removeAttribute("disabled")
+      }, 2000)
+      
+      
     }
     else {
       endGame()
@@ -39,12 +43,14 @@ function endGame() {
    : wizard.dead ? "The Monsters is Victorious" : `The Wizard Wins`
   const endEmoji = !wizard.dead ? "🔮" : "☠️"
 
+  document.getElementById("attack-button").setAttribute("disabled", "disabled")
   setTimeout(() => {
     document.body.innerHTML = `<div class="end-game">
           <h2>Game Over</h2>
           <h3>${endMessage}</h3>
           <p class="end-emoji">${endEmoji}</p>
       </div>` 
+      document.getElementById("attack-button").removeAttribute("disabled")
   }, 1500)
 
 
