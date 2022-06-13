@@ -22,7 +22,7 @@ function attack() {
         monster = getNewMonster()
         render()
         document.getElementById("attack-button").removeAttribute("disabled")
-      }, 2000)
+      }, 1500)
       
       
     }
