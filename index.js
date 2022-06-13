@@ -34,7 +34,9 @@ function attack() {
 }
 
 function endGame() {
-  const endMessage = wizard.dead ? "The Monsters is Victorious" : monster.dead ? `The Wizard Wins` : `No victors - all creatures are dead`
+  const endMessage = wizard.dead && monster.dead
+   ?  `No victors - all creatures are dead`
+   : wizard.dead ? "The Monsters is Victorious" : `The Wizard Wins`
   const endEmoji = !wizard.dead ? "🔮" : "☠️"
 
   setTimeout(() => {
