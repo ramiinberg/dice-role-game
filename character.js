@@ -41,7 +41,6 @@ function Character(data) {
   this.getHealthBarHtml = () => {
     const percent = getPercentage(this.health, this.maxHealth)
     const danger = percent <= 25 ? 'danger' : ''
-    console.log(percent)
     return `<div class="health-bar-outer">
       <div class="health-bar-inner ${danger}" 
         style="width: ${percent}%;">
